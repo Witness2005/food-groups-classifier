@@ -1,0 +1,15 @@
+# Entorno virtual de Python
+venv/
+__pycache__/
+
+# Modelos grandes (Excluir modelos binarios grandes para no saturar el repositorio)
+*.h5
+*.pt
+models/modelo.h5
+
+# Logs de inferencias (Se excluye el archivo de log para no guardarlo en el historial)
+logs/
+
+# Archivos de configuración y temporales
+.DS_Store
+.env

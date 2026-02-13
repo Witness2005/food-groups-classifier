@@ -1,4 +1,4 @@
-# 🍎 Food AI Detector (Web & Deep Learning) (frontend) 
+# 🍎 Food AI Detector (Web & Deep Learning) Frontend
 
 ![Project Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)

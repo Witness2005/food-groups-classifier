@@ -28,7 +28,7 @@ Es un contenedor en formato **HDF5** (Hierarchical Data Format) que almacena la 
 ### Origen del Modelo
 El entrenamiento, preprocesamiento de datos y validación del modelo se realizaron en un entorno separado para garantizar la modularidad del proyecto. Puedes ver el código fuente del entrenamiento, las métricas de precisión y el dataset utilizado en el siguiente enlace:
 
-🔗 **[Ver Repositorio de Entrenamiento y Data Science Aquí]([LINK_A_TU_OTRO_REPOSITORIO_AQUI](https://github.com/LuisMalte/Modelo_Detector_Alimentos))**
+🔗 **[Ver Repositorio de Entrenamiento y Data Science Aquí](https://github.com/LuisMalte/Modelo_Detector_Alimentos)**
 
 ---
 

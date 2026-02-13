@@ -6,88 +6,88 @@
 [![Flask](https://img.shields.io/badge/Flask-Framework-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
 
-**Food AI Detector** es una aplicación web interactiva de **Visión por Computadora** diseñada para clasificar alimentos en tiempo real. El sistema utiliza una Red Neuronal Convolucional (CNN) para distinguir entre **Frutas, Granos y Lácteos**, ofreciendo una experiencia de usuario gamificada con retroalimentación visual y auditiva inmediata.
+**Food AI Detector** is an interactive **Computer Vision** web application designed to classify food in real-time. The system utilizes a Convolutional Neural Network (CNN) to distinguish between **Fruits, Grains, and Dairy**, offering a gamified user experience with immediate visual and auditory feedback.
 
 ---
 
-## 👥 Colaboradores y Desarrollo
-Este proyecto es el resultado de un esfuerzo colaborativo enfocado en la integración de modelos de Deep Learning en entornos web productivos.
+## 👥 Contributors and Development
+This project is the result of a collaborative effort focused on integrating Deep Learning models into productive web environments.
 
-* **LuisMalte** - [Perfil de GitHub](https://github.com/LuisMalte) - 
-* **Witness2005** - [Perfil de GitHub](https://github.com/Witness2005) - 
-
----
-
-## 🧠 El "Cerebro" del Proyecto: Model.h5
-
-El núcleo de inteligencia de esta aplicación reside en el archivo `model.h5`.
-
-### ¿Qué es este archivo?
-Es un contenedor en formato **HDF5** (Hierarchical Data Format) que almacena la arquitectura completa de nuestra Red Neuronal, sus capas, y lo más importante: **los pesos (weights) entrenados**. Esto permite que la aplicación realice inferencias (predicciones) instantáneas sin necesidad de volver a entrenar el sistema con cada uso.
-
-### Origen del Modelo
-El entrenamiento, preprocesamiento de datos y validación del modelo se realizaron en un entorno separado para garantizar la modularidad del proyecto. Puedes ver el código fuente del entrenamiento, las métricas de precisión y el dataset utilizado en el siguiente enlace:
-
-🔗 **[Ver Repositorio de Entrenamiento y Data Science Aquí](https://github.com/LuisMalte/Modelo_Detector_Alimentos)**
+* **LuisMalte** - [GitHub Profile](https://github.com/LuisMalte)
+* **Witness2005** - [GitHub Profile](https://github.com/Witness2005)
 
 ---
 
-## 📽️ Demostración del Sistema
+## 🧠 The Project's "Brain": Model.h5
 
-La aplicación cuenta con dos modos principales de funcionamiento. A continuación, se demuestra la capacidad de respuesta del modelo en ambos escenarios:
+The core intelligence of this application resides in the `model.h5` file.
 
-### 1. Análisis mediante Subida de Archivo
-*Procesamiento de imágenes estáticas (JPG, PNG, WebP) desde el almacenamiento local.*
+### What is this file?
+It is a container in **HDF5** (Hierarchical Data Format) format that stores the complete architecture of our Neural Network, its layers, and most importantly: the **trained weights**. This allows the application to perform instantaneous inferences (predictions) without the need to retrain the system with every use.
+
+### Model Origin
+The training, data preprocessing, and model validation were performed in a separate environment to ensure project modularity. You can view the training source code, accuracy metrics, and the dataset used at the following link:
+
+🔗 **[View Training and Data Science Repository Here](https://github.com/LuisMalte/Modelo_Detector_Alimentos)**
+
+---
+
+## 📽️ System Demonstration
+
+The application features two main operating modes. Below is a demonstration of the model's responsiveness in both scenarios:
+
+### 1. Analysis via File Upload
+*Processing of static images (JPG, PNG, WebP) from local storage.*
 
 https://youtu.be/f0RX_z_p7lI
 
-### 2. Análisis en Tiempo Real (Cámara)
-*Integración con la API del navegador para captura y predicción instantánea.*
+### 2. Real-Time Analysis (Camera)
+*Integration with the browser API for instantaneous capture and prediction.*
 
 https://youtu.be/fILP76t46Rg
 
 ---
 
-## 🚀 Funcionalidades Clave
+## 🚀 Key Features
 
-* **Detección Multi-clase:** Clasificación precisa entre tres categorías alimenticias distintas.
-* **Integración de Hardware:** Uso de la API `navigator.mediaDevices` para acceso directo a la cámara del dispositivo (móvil o desktop).
-* **Feedback Sensorial:**
-    * **Visual:** Efectos de partículas (lluvia de emojis/imágenes) correspondientes a la clase detectada.
-    * **Auditivo:** Reproducción de pistas de audio temáticas tras una predicción exitosa.
-* **Interfaz Glassmorphism:** Diseño moderno utilizando transparencias y desenfoques (CSS backdrop-filter).
-* **SPA Feel:** Navegación fluida entre pestañas de "Cámara" y "Subida" sin recargas de página, manipulando el DOM dinámicamente.
+* **Multi-class Detection:** Accurate classification among three distinct food categories.
+* **Hardware Integration:** Use of the `navigator.mediaDevices` API for direct access to the device's camera (mobile or desktop).
+* **Sensory Feedback:**
+    * **Visual:** Particle effects (emoji/image rain) corresponding to the detected class.
+    * **Auditory:** Playback of thematic audio tracks upon a successful prediction.
+* **Glassmorphism Interface:** Modern design using transparencies and blurs (CSS backdrop-filter).
+* **SPA Feel:** Seamless navigation between "Camera" and "Upload" tabs without page reloads, by dynamically manipulating the DOM.
 
 ---
 
-## 🛠️ Stack Tecnológico
+## 🛠️ Tech Stack
 
 ### Backend (Python)
-* **Flask:** Servidor web ligero para exponer la API REST `/predict`.
-* **TensorFlow / Keras:** Carga del modelo `model.h5` y ejecución del grafo computacional.
-* **Pillow (PIL):** Preprocesamiento de imágenes (redimensión a 128x128px y conversión de canales de color).
-* **NumPy:** Manipulación de matrices para normalizar los inputs ($\frac{pixel}{255}$).
+* **Flask:** Lightweight web server to expose the `/predict` REST API.
+* **TensorFlow / Keras:** Loading the `model.h5` model and executing the computational graph.
+* **Pillow (PIL):** Image preprocessing (resizing to 128x128px and color channel conversion).
+* **NumPy:** Matrix manipulation to normalize inputs ($\frac{pixel}{255}$).
 
 ### Frontend (Web)
-* **JavaScript (ES6):** Lógica asíncrona (`async/await`) para comunicación con el backend mediante `fetch`.
-* **Bootstrap 5:** Sistema de grillas y componentes responsivos.
-* **HTML5 Canvas:** Captura de frames de video para convertirlos en blobs de datos enviables.
+* **JavaScript (ES6):** Asynchronous logic (`async/await`) for communication with the backend via `fetch`.
+* **Bootstrap 5:** Responsive grid system and components.
+* **HTML5 Canvas:** Capturing video frames to convert them into sendable data blobs.
 
 ---
 
-## 📂 Estructura del Proyecto
+## 📂 Project Structure
 
 ```bash
-├── api.py              # Aplicación Flask (Entry point y Rutas)
-├── model.h5            # Modelo de IA (Pesos y Arquitectura - Importado)
-├── labels.txt          # Clases legibles: [fruta, grano, lacteo]
-├── requirements.txt    # Dependencias del entorno Python
-├── wsgi.py             # Configuración para despliegue (Gunicorn/uWSGI)
-├── static/             # Recursos del Frontend
-│   ├── audio/          # Feedback sonoro
-│   ├── img/            # Assets gráficos
-│   ├── js/app.js       # Lógica del cliente (Cámara, AJAX, DOM)
-│   └── css/style.css   # Estilos personalizados
+├── api.py              # Flask Application (Entry point and Routes)
+├── model.h5            # AI Model (Weights and Architecture - Imported)
+├── labels.txt          # Readable classes: [fruit, grain, dairy]
+├── requirements.txt    # Python environment dependencies
+├── wsgi.py             # Deployment configuration (Gunicorn/uWSGI)
+├── static/             # Frontend resources
+│   ├── audio/          # Sound feedback
+│   ├── img/            # Graphic assets
+│   ├── js/app.js       # Client logic (Camera, AJAX, DOM)
+│   └── css/style.css   # Custom styles
 └── templates/
-    ├── index.html      # Interfaz principal
-    └── ayuda.html      # Guía de usuario
+    ├── index.html      # Main interface
+    └── ayuda.html      # User guide
